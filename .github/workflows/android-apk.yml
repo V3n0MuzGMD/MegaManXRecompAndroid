@@ -1,0 +1,19 @@
+name: Build Android APK
+
+on:
+workflow_dispatch:
+
+jobs:
+build:
+runs-on: ubuntu-22.04
+steps:
+- name: Checkout
+uses: actions/checkout@v4
+with:
+submodules: recursive
+
+  - name: Verify source
+    run: |
+      echo "Arquivos do projeto:"
+      ls -la
+      test -f CMakeLists.txt
